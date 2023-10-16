@@ -32,3 +32,36 @@ document.body.appendChild($ul2);
 $ul2.innerHTML = "";
 contactos.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`));
 
+function saludar(e) {
+  alert("Hola Mundo");
+  console.log(e);
+  e.target.style.backgroundColor = "black";
+  e.target.style.color = "white";
+  e.target.innerText = " Me has presionado 😎👍🏻";
+}
+
+$btnTheme = document.querySelector("#btn-theme");
+
+$btnTheme.addEventListener("click", (e) => {
+  if (document.body.classList.contains("dark-mode")) {
+    document.body.classList.remove("dark-mode");
+    e.target.innerText = "🌙";
+  } else {
+    document.body.classList.add("dark-mode");
+    e.target.innerText = "☀️";
+  }
+});
+
+
+let $radioThemes = document.querySelectorAll("input[name='theme']");
+console.log($radioThemes);
+
+
+document.addEventListener("click", (e) => {
+  if (!e.target.matches(`input[name = "theme"]`)) {
+    return false;
+  }
+
+  $themeCSS = document.querySelector("#theme");
+  $themeCSS.href = e.target.dataset.theme;
+});
