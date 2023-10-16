@@ -48,7 +48,7 @@ $btnTheme.addEventListener("click", (e) => {
     e.target.innerText = "🌙";
   } else {
     document.body.classList.add("dark-mode");
-    e.target.innerText = "☀️";
+    e.target.innerText = "🤏";
   }
 });
 
